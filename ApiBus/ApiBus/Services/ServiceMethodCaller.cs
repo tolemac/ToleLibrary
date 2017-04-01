@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using ToleLibraries.ApiBus.Exceptions;
 using ToleLibraries.ApiBus.Services.Interceptors;
@@ -53,7 +54,7 @@ namespace ToleLibraries.ApiBus.Services
                 callContext.Exception = ex;
                 CallInterceptorObjects(interceptors, callContext, Moment.OnException);
                 DistpatchOnExceptionInterceptors(callContext.Service, callContext);
-                throw new ExecutionException(callContext.Service.Name, callContext.Service.Type, ex);
+                throw new ExecutionException(callContext.Service.Name, callContext.Service.Type, callContext, ex);
             }
 
             callContext.Result = result.Result;
@@ -101,12 +102,19 @@ namespace ToleLibraries.ApiBus.Services
 
         private static void DistpatchAfterInterceptors(CallContext callContext)
         {
+            if (callContext == null)
+            {
+                return;
+            }
             var interceptors = callContext.Service.GetAfterInterceptors(callContext.MethodName);
-            var preResult = callContext.Result;
+            object preResult = callContext.Result;
+
             foreach (var interceptor in interceptors)
             {
                 interceptor.Action(callContext);
-                if (callContext.Result != preResult)
+                if (preResult == null && callContext.Result != null || preResult != null && callContext.Result == null
+                 || preResult != null && callContext.Result != null && callContext.Result.GetType() != preResult.GetType()
+                 || callContext.Result != preResult)
                     return;
             }
         }

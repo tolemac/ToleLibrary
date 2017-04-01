@@ -9,15 +9,15 @@ namespace ToleLibraries.ApiBus.Tests
 {
     public class ApiBusDependencyResolverServiceMock : IDependencyResolver
     {
-        readonly ConcurrentDictionary<Type, object> _objects = new ConcurrentDictionary<Type, object>();
+        public readonly ConcurrentDictionary<Type, object> Objects = new ConcurrentDictionary<Type, object>();
 
         #region Implementation of IDependencyResolver
 
         public object Resolve(Type type)
         {
-            if (_objects.ContainsKey(type))
+            if (Objects.ContainsKey(type))
             {
-                return _objects[type];
+                return Objects[type];
             }
 
             if (type == typeof(IApplicationContext))
