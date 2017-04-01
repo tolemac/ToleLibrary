@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationContext", "ApplicationContext\src\ApplicationContext.csproj", "{E5CD0A2C-4A3B-4B25-A757-D6CEEBA40FA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationContext", "ApplicationContext\ApplicationContext\ApplicationContext.csproj", "{E5CD0A2C-4A3B-4B25-A757-D6CEEBA40FA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyResolver", "DependencyResolver\DependencyResolver\DependencyResolver.csproj", "{A8E83776-07F6-4295-87A0-6D75A15FD79E}"
 EndProject
@@ -19,6 +19,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiBus", "ApiBus\ApiBus\ApiBus.csproj", "{52E150DE-1394-4026-A363-600741873B46}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiBus.Tests", "ApiBus\ApiBus.Tests\ApiBus.Tests.csproj", "{6E7FB87B-1896-4D84-A323-A80BCC58391B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_ Solution Items", "_ Solution Items", "{8CF6B2EF-9213-40AB-A633-27D215483062}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ApplicationContext\src\ApplicationContext.csproj" />
+    <ProjectReference Include="..\..\ApplicationContext\ApplicationContext\ApplicationContext.csproj" />
     <ProjectReference Include="..\..\DependencyResolver\DependencyResolver\DependencyResolver.csproj" />
   </ItemGroup>
 
