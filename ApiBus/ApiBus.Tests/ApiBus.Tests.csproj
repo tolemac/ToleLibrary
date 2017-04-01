@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>    
+    <TargetFrameworks>netcoreapp1.1;netstandard1.6;net45</TargetFrameworks>
+    <RootNamespace>ToleLibraries.ApiBus.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApplicationContext\src\ApplicationContext.csproj" />
+    <ProjectReference Include="..\..\DependencyResolver\DependencyResolver\DependencyResolver.csproj" />
+    <ProjectReference Include="..\..\TestCommons\TestCommons\TestCommons.csproj" />
+    <ProjectReference Include="..\ApiBus\ApiBus.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
