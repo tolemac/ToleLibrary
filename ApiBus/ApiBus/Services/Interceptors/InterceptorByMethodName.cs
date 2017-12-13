@@ -6,7 +6,7 @@ namespace ToleLibraries.ApiBus.Services.Interceptors
     {
         public void Intercept(Moment moment, CallContext context)
         {
-#if NET45 || NETCOREAPP1_1
+#if NET45 || NETCOREAPP2_0 || NETCOREAPP1_1
             var method = GetType().GetMethod(moment + context.MethodName);
 #endif
 #if NETSTANDARD1_6

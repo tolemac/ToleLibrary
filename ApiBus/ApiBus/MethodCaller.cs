@@ -132,7 +132,7 @@ namespace ToleLibraries.ApiBus
         private static MethodInfo LocateMethod(Type srvInterface, string nombreMetodo, JObject parametros)
         {
             var nombreParametros = parametros?.Properties().Select(prop => prop.Name).ToList() ?? new List<string>();
-#if NET45 || NETCOREAPP1_1
+#if NET45 || NETCOREAPP2_0 || NETCOREAPP1_1
             var methods = srvInterface.GetMethods();
 #endif
 #if NETSTANDARD1_6
